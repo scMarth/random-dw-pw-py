@@ -4,7 +4,7 @@ import random
 
 class RandomDwPw(object):
     """
-    The central class representing a Mana Egg
+    A class for creating diceware passwords
 
     Parameters
     ----------
@@ -26,13 +26,11 @@ class RandomDwPw(object):
     num_numbers : int
         (Optional) Specifies the minimum number of numbers required in the generated password. If not specified, defaults to 0.
     
-    Private Attributes
-    ------------------
+    Attributes
+    ----------
     __word_list : str[]
         A list of strings containing a diceware wordlist
 
-    Public Atrributes
-    -----------------
     """
 
     def __init__(self, word_list_path, pw_min_length, pw_max_length = -1, \
@@ -80,7 +78,21 @@ class RandomDwPw(object):
         random_number = int(random_number)
         return self.__word_list[random_number]
 
+
     def generate_easy_dw_pw(self):
+        """
+        Generates an 'easy' diceware password, meaning one that sacrifices some security so that it is convenient to type.
+
+        Parameters
+        ----------
+        (None)
+
+        Returns
+        -------
+        diceware_password : String
+            The string returned is a diceware password, a list of words separated by strings. If capitals are specified, random letters will be capitalized. If numbers or special characters are specified, they will be inserted at random locations either in front of or after a word.
+
+        """
         curr_pw = ""
         curr_word_array = []
         curr_pw_len = 0

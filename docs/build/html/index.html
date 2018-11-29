@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to random-dw-pw-py’s documentation! &#8212; random-dw-pw-py 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-random_dw_pw">
+<span id="welcome-to-random-dw-pw-py-s-documentation"></span><h1>Welcome to random-dw-pw-py’s documentation!<a class="headerlink" href="#module-random_dw_pw" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="random_dw_pw.RandomDwPw">
+<em class="property">class </em><code class="descclassname">random_dw_pw.</code><code class="descname">RandomDwPw</code><span class="sig-paren">(</span><em>word_list_path</em>, <em>pw_min_length</em>, <em>pw_max_length=-1</em>, <em>num_capitals=0</em>, <em>num_spec_chars=0</em>, <em>num_numbers=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/random_dw_pw.html#RandomDwPw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#random_dw_pw.RandomDwPw" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for creating diceware passwords</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>word_list_path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">A string containing the path to the diceware wordlist</p>
+</dd>
+<dt><strong>pw_min_length</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Specifies the minimum length for the generated password</p>
+</dd>
+<dt><strong>pw_max_length</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(Optional) Specifies the maximum length for the generated password. If not specified, the generated password will simply have random words added until the minimum length is specified. If a maximum length is specified, random words will be truncated to meet this requirement</p>
+</dd>
+<dt><strong>num_capitals</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(Optional) Specifies the minimum number of capitals in the generated password. If not specified, defaults to 0.</p>
+</dd>
+<dt><strong>num_spec_chars</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(Optional) Specifies the minimum number of required special characters in the generated password. If not specified, defaults to 0.</p>
+</dd>
+<dt><strong>num_numbers</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">(Optional) Specifies the minimum number of numbers required in the generated password. If not specified, defaults to 0.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>__word_list</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str[]</span></dt>
+<dd><p class="first last">A list of strings containing a diceware wordlist</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="random_dw_pw.RandomDwPw.generate_easy_dw_pw">
+<code class="descname">generate_easy_dw_pw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/random_dw_pw.html#RandomDwPw.generate_easy_dw_pw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#random_dw_pw.RandomDwPw.generate_easy_dw_pw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates an ‘easy’ diceware password, meaning one that sacrifices some security so that it is convenient to type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>(None)</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>diceware_password</strong> <span class="classifier-delimiter">:</span> <span class="classifier">String</span></dt>
+<dd><p class="first last">The string returned is a diceware password, a list of words separated by strings. If capitals are specified, random letters will be capitalized. If numbers or special characters are specified, they will be inserted at random locations either in front of or after a word.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">random-dw-pw-py</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, scMarth.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
