@@ -1,0 +1,15 @@
+parameters to add:
+    - maximum number of capitals
+    - maximum number of special characters
+    - maximum number of numbers
+    - exact number of capitals
+    - exact number of special characters
+    - exact number of numbers
+
+other features:
+    - more secure password generation where numbers and special characters could be placed in a word, either by displacing or replacing a character in a randomly chosen word
+
+password caching:
+    - do not pick anything that matches the last n passwords in a password cache
+
+documentation
