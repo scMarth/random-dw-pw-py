@@ -5,7 +5,20 @@
 
 Welcome to random-dw-pw-py's documentation!
 ===========================================
-.. module:: random_dw_pw
 
-.. autoclass:: RandomDwPw
-   :members:
+This is a simple python module that can be used to generate diceware passwords using python's built-in 'random' module to generate random numbers. It probably isn't the best way to generate random numbers, but it is free.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   class
+   example
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
