@@ -1,2 +1,3 @@
-# random-pw-py
-quick and dirty random password generator
+# random-dw-pw-py
+
+Quick and dirty random diceware password generator. Not using the most secure randomness.
