@@ -141,26 +141,49 @@ class RandomDwPw(object):
                 else:
                     curr_word_array[rand_ind] = curr_word_array[rand_ind] + str(rand_inj)
 
-        for i in range(0, len(curr_word_array)):
-            token = curr_word_array[i]
-            curr_pw += token
-            if i != (len(curr_word_array) - 1):
-                curr_pw += " "
+        curr_pw = " ".join(curr_word_array)
 
         # number of capitals
         num_letters = len(re.findall("[a-z]", curr_pw))
 
-        # catch errors
         if self.pw_max_length != -1:
+            # catch errors
             if self.num_capitals > self.pw_max_length or self.num_capitals > num_letters:
                 sys.stderr.write('Error generating password: Requiring too many capital letters for the specified password length. Change parameters and try again.')
                 sys.exit()
                 return None
 
+            # truncate if over the maximum length. This is done by first picking a random token in the password,
+            # then deleting the letter that is closest to the end of that token. Only delete from tokens that have 2 or more characters.
+            
+            # this is currently buggy
+
+            # while len(curr_pw) > self.pw_max_length:
+            #     # print(curr_pw)
+            #     tokens = curr_pw.split()
+            #     rand_token_ind = random.randint(0, len(tokens)-1)
+            #     token = tokens[rand_token_ind]
+            #     token_chars = list(token)
+            #     del_ind = len(token_chars) - 1
+            #     while (not re.search('[a-z]', token_chars[del_ind])) and del_ind >= 0:
+            #         del_ind -= 1
+            #     if del_ind < 0:
+            #         continue
+            #     if len(token_chars) == 1:
+            #         continue
+            #     del token_chars[del_ind]
+            #     token = "".join(token_chars)
+            #     tokens[rand_token_ind] = token
+            #     curr_pw = " ".join(tokens)
+            #     # print(curr_pw + "\n")
+
+
         curr_caps = 0
         while curr_caps < self.num_capitals:
             rand_ind = random.randint(0,len(curr_pw)-1)
             pw_list = list(curr_pw)
+            if not re.search("[a-z]", pw_list[rand_ind]): # skip if this isn't a lowercase letter
+                continue
             pw_list[rand_ind] = curr_pw[rand_ind].upper()
             curr_pw = "".join(pw_list)
             curr_caps += 1

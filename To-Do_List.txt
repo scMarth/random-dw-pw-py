@@ -5,6 +5,7 @@ parameters to add:
     - exact number of capitals
     - exact number of special characters
     - exact number of numbers
+    - number of words
 
 other features:
     - more secure password generation where numbers and special characters could be placed in a word, either by displacing or replacing a character in a randomly chosen word
@@ -13,3 +14,5 @@ password caching:
     - do not pick anything that matches the last n passwords in a password cache
 
 documentation
+
+sometimes the script hangs, perhaps because of situations where many tokens are short, and they can't be deleted from without removing spaces
