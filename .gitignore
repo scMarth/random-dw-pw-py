@@ -1,2 +1,5 @@
 # Ignore built docs
 docs/build/*
+
+# Ignore pyc
+*.pyc
