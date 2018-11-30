@@ -18,3 +18,5 @@ documentation
 sometimes the script hangs, perhaps because of situations where many tokens are short, and they can't be deleted from without removing spaces
 
 update README
+
+link read-the-docs to git repo
