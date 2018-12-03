@@ -23,3 +23,5 @@ sometimes the script hangs, perhaps because of situations where many tokens are 
 update README
 
 link read-the-docs to git repo
+
+for more info on diceware in intro
